@@ -1,179 +1,194 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranking de Tênis CEPEUSP</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
-.wrap{max-width:680px;margin:0 auto;padding:2rem 1rem 3rem;font-family:system-ui,-apple-system,sans-serif;}
-.hero{background:#1a3a6b;border-radius:16px;padding:2rem 2rem 1.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;}
-.hero-waves{position:absolute;bottom:0;left:0;right:0;height:48px;}
-.hero-title{font-size:26px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:.5rem;}
-.hero-sub{font-size:14px;color:#a8c8e8;margin-bottom:1.5rem;line-height:1.6;}
-.hero-link{display:inline-block;background:#c9e52e;color:#1a3a6b;font-size:13px;font-weight:500;padding:8px 16px;border-radius:8px;text-decoration:none;}
-.badge{display:inline-block;font-size:11px;font-weight:500;padding:3px 9px;border-radius:9999px;margin-bottom:.75rem;}
-.badge-beta{background:#fef3c7;color:#92400e;}
-.section-title{font-size:17px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:1.5rem;}
-.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem;}
-.card-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:.7rem;}
-.card-icon svg{width:18px;height:18px;}
-.card-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:.3rem;}
-.card-body{font-size:13px;color:var(--color-text-secondary);line-height:1.55;}
-.steps{margin-bottom:1.5rem;}
-.step{display:flex;gap:14px;align-items:flex-start;margin-bottom:1rem;}
-.step-num{width:28px;height:28px;border-radius:50%;background:#1a3a6b;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.step-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px;}
-.step-body{font-size:13px;color:var(--color-text-secondary);line-height:1.5;}
-.hl{background:var(--color-background-secondary);border-left:3px solid #1a3a6b;border-radius:0 12px 12px 0;padding:1rem 1.25rem;margin-bottom:1.5rem;}
-.hl-orange{border-left-color:#e8841a;}
-.hl-pink{border-left-color:#d4537e;background:#fef6fa;}
-.hl-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:.3rem;}
-.hl-body{font-size:13px;color:var(--color-text-secondary);line-height:1.55;}
-.doubles-card{background:#1a3a6b;border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;}
-.doubles-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:.4rem;}
-.doubles-body{font-size:13px;color:#a8c8e8;line-height:1.55;}
-.new-badge{display:inline-block;background:#c9e52e;color:#1a3a6b;font-size:11px;font-weight:500;padding:2px 9px;border-radius:9999px;margin-bottom:.6rem;}
-.pts-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.75rem;}
-.pts-chip{background:rgba(255,255,255,.12);border-radius:8px;padding:6px 10px;text-align:center;}
-.pts-val{font-size:16px;font-weight:500;color:#fff;}
-.pts-lbl{font-size:11px;color:#a8c8e8;margin-top:1px;}
-.fem-card{border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;border:0.5px solid #f4c0d1;background:#fef6fa;}
-.fem-header{display:flex;align-items:center;gap:10px;margin-bottom:.75rem;}
-.fem-dot{width:10px;height:10px;border-radius:50%;background:#d4537e;flex-shrink:0;}
-.fem-title{font-size:15px;font-weight:500;color:#72243e;}
-.fem-body{font-size:13px;color:#993556;line-height:1.6;}
-.fem-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:.75rem;}
-.fem-pill{background:#f4c0d1;color:#72243e;font-size:12px;font-weight:500;padding:4px 10px;border-radius:9999px;}
-.br-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:1.5rem;}
-.br-item{border-radius:10px;padding:.6rem .75rem;text-align:center;}
-.br-name{font-size:12px;font-weight:500;margin-bottom:2px;}
-.br-range{font-size:11px;opacity:.8;}
-.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.5rem 0;}
-.cta{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:12px;padding:1.25rem;text-align:center;}
-.cta-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:.4rem;}
-.cta-body{font-size:13px;color:var(--color-text-secondary);line-height:1.55;margin-bottom:1rem;}
-.cta-url{display:inline-block;background:#1a3a6b;color:#fff;font-size:13px;font-weight:500;padding:9px 20px;border-radius:8px;text-decoration:none;}
-@media(max-width:500px){.cards{grid-template-columns:1fr;}.br-grid{grid-template-columns:repeat(2,1fr);}.hero-title{font-size:21px;}}
-</style>
+body{font-family:'Inter',system-ui,sans-serif;background:#f0f0ee;display:flex;justify-content:center;padding:28px;}
+.page{width:700px;background:#fff;border-radius:22px;overflow:hidden;padding:28px 28px 32px;}
 
-<div class="wrap">
+.hero{background:#1a3a6b;border-radius:14px;padding:28px 24px 0;margin-bottom:22px;position:relative;overflow:hidden;}
+.hero-content{position:relative;z-index:2;}
+.badge-beta{display:inline-block;background:#fef3c7;color:#92400e;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.03em;}
+.hero-title{font-size:24px;font-weight:600;color:#fff;line-height:1.2;margin-bottom:7px;}
+.hero-sub{font-size:13px;color:#a8c8e8;margin-bottom:18px;line-height:1.65;max-width:500px;}
+.hero-link{display:inline-flex;align-items:center;gap:6px;background:#c9e52e;color:#1a3a6b;font-size:12.5px;font-weight:700;padding:9px 17px;border-radius:8px;text-decoration:none;margin-bottom:22px;}
+.hero-waves{display:block;width:calc(100% + 48px);margin-left:-24px;height:46px;}
+
+/* Section header with line */
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sec-title{font-size:11px;font-weight:600;color:#9b9b95;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+.sec-line{flex:1;height:0.5px;background:#e0e0dc;}
+
+/* Feature cards — 4 across, caixinhas */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.feat-card{border-radius:12px;padding:14px 12px;border:0.5px solid transparent;display:flex;flex-direction:column;gap:10px;}
+.feat-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feat-icon svg{width:18px;height:18px;}
+.feat-title{font-size:13px;font-weight:600;margin-bottom:3px;}
+.feat-body{font-size:11.5px;line-height:1.5;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;align-items:start;}
+
+/* Barragens */
+.br-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
+.br-item{border-radius:10px;padding:10px 8px;text-align:center;}
+.br-name{font-size:11px;font-weight:600;margin-bottom:2px;}
+.br-range{font-size:10.5px;opacity:.75;}
+
+/* Feminino */
+.fem-card{border-radius:12px;padding:14px;border:1px solid #f4c0d1;background:#fef6fa;}
+.fem-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.fem-dot{width:9px;height:9px;border-radius:50%;background:#d4537e;flex-shrink:0;}
+.fem-title{font-size:13px;font-weight:600;color:#72243e;}
+.fem-body{font-size:12px;color:#993556;line-height:1.6;margin-bottom:10px;}
+.fem-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.fem-pill{background:#f4c0d1;color:#72243e;font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:99px;}
+
+/* Points — caixinhas */
+.pts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.pts-card{background:#f5f5f3;border-radius:12px;padding:14px 10px;text-align:center;border:0.5px solid #e8e8e4;}
+.pts-val{font-size:20px;font-weight:600;color:#1a3a6b;margin-bottom:4px;}
+.pts-lbl{font-size:11px;color:#6b6b6b;}
+
+/* Duplas */
+.doubles-card{background:#1a3a6b;border-radius:12px;padding:18px;margin-bottom:22px;display:flex;gap:16px;align-items:center;}
+.doubles-left{flex:1;}
+.new-badge{display:inline-block;background:#c9e52e;color:#1a3a6b;font-size:10px;font-weight:700;padding:2px 9px;border-radius:99px;margin-bottom:7px;}
+.doubles-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:5px;}
+.doubles-body{font-size:12px;color:#a8c8e8;line-height:1.55;}
+.doubles-chips{display:flex;flex-direction:column;gap:6px;flex-shrink:0;}
+.d-chip{background:rgba(255,255,255,.12);border-radius:8px;padding:8px 12px;text-align:center;min-width:76px;border:0.5px solid rgba(255,255,255,.15);}
+.d-val{font-size:16px;font-weight:600;color:#fff;}
+.d-lbl{font-size:10px;color:#a8c8e8;margin-top:1px;}
+
+/* Steps — caixinhas */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.step-card{background:#f5f5f3;border-radius:12px;padding:14px;border:0.5px solid #e8e8e4;}
+.step-num{width:26px;height:26px;border-radius:50%;background:#1a3a6b;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.step-title{font-size:12.5px;font-weight:600;color:#1a1a1a;margin-bottom:4px;line-height:1.4;}
+.step-body{font-size:11px;color:#6b6b6b;line-height:1.5;}
+
+/* Beta */
+.beta-bar{background:#f5f5f3;border-radius:0 12px 12px 0;border-left:3px solid #e8841a;padding:13px 15px;margin-bottom:16px;}
+.beta-title{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:3px;}
+.beta-body{font-size:12px;color:#6b6b6b;line-height:1.5;}
+
+/* CTA */
+.cta{background:#f5f5f3;border-radius:14px;padding:22px;text-align:center;border:0.5px solid #e0e0dc;}
+.cta-title{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:5px;}
+.cta-body{font-size:13px;color:#6b6b6b;margin-bottom:15px;line-height:1.55;}
+.cta-btn{display:inline-block;background:#1a3a6b;color:#c9e52e;font-size:13px;font-weight:700;padding:11px 26px;border-radius:9px;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="page">
 
   <div class="hero">
-    <svg class="hero-waves" viewBox="0 0 680 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 20 C80 20 100 20 160 32 C220 44 240 44 300 32 C360 20 380 20 440 32 C500 44 520 44 580 32 C640 20 660 20 680 20 L680 48 L0 48Z" fill="#4da6d4" opacity=".4"/>
-      <path d="M0 28 C80 28 100 28 160 40 C220 52 240 52 300 40 C360 28 380 28 440 40 C500 52 520 52 580 40 C640 28 660 28 680 28 L680 48 L0 48Z" fill="#e8841a" opacity=".5"/>
-      <path d="M0 36 C80 36 100 36 160 44 C220 52 240 52 300 44 C360 36 380 36 440 44 C500 52 520 52 580 44 C640 36 660 36 680 36 L680 48 L0 48Z" fill="#4da6d4" opacity=".35"/>
+    <div class="hero-content">
+      <div class="badge-beta">versão beta</div>
+      <div class="hero-title">Ranking de Tênis CEPEUSP</div>
+      <div class="hero-sub">O ranking que você conhece, agora digital. Registre partidas, acompanhe sua evolução e desafie colegas de barragem — tudo em um lugar só.</div>
+      <a class="hero-link" href="https://ranking-tenis-usp.web.app">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        ranking-tenis-usp.web.app
+      </a>
+    </div>
+    <svg class="hero-waves" viewBox="0 0 748 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 18 C90 18 110 18 180 30 C250 42 270 42 340 30 C410 18 430 18 500 30 C570 42 590 42 660 30 C720 18 740 18 748 18 L748 46 L0 46Z" fill="#4da6d4" opacity=".45"/>
+      <path d="M0 27 C90 27 110 27 180 39 C250 51 270 51 340 39 C410 27 430 27 500 39 C570 51 590 51 660 39 C720 27 740 27 748 27 L748 46 L0 46Z" fill="#e8841a" opacity=".55"/>
+      <path d="M0 36 C90 36 110 36 180 46 C250 56 270 56 340 46 C410 36 430 36 500 46 C570 56 590 56 660 46 C720 36 740 36 748 36 L748 46 L0 46Z" fill="#4da6d4" opacity=".4"/>
     </svg>
-    <div class="badge badge-beta">versão beta</div>
-    <div class="hero-title">Ranking de Tênis CEPEUSP</div>
-    <div class="hero-sub">O ranking que você conhece, agora digital. Registre partidas, acompanhe sua evolução e desafie colegas de barragem — tudo em um lugar só.</div>
-    <a class="hero-link" href="https://ranking-tenis-usp.web.app">ranking-tenis-usp.web.app</a>
   </div>
 
-  <div class="section-title">O que você encontra</div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon" style="background:#e6f1fb;"><svg viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
-      <div class="card-title">Ranking em tempo real</div>
-      <div class="card-body">Posições atualizadas a cada partida, com barragens SLAM, MASTER, 500 e 250.</div>
+  <!-- O que você encontra -->
+  <div class="sec-header"><span class="sec-title">O que você encontra</span><div class="sec-line"></div></div>
+  <div class="feat-grid">
+    <div class="feat-card" style="background:#e6f1fb;border-color:#b5d4f4;">
+      <div class="feat-icon" style="background:#b5d4f4;"><svg viewBox="0 0 24 24" fill="none" stroke="#0c447c" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+      <div><div class="feat-title" style="color:#0c447c;">Ranking</div><div class="feat-body" style="color:#185fa5;">Posições em tempo real, por barragem.</div></div>
     </div>
-    <div class="card">
-      <div class="card-icon" style="background:#eaf3de;"><svg viewBox="0 0 24 24" fill="none" stroke="#3b6d11" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div class="card-title">Perfil do atleta</div>
-      <div class="card-body">Foto, instituto, estilo de jogo, histórico completo de partidas e evolução no ranking.</div>
+    <div class="feat-card" style="background:#eaf3de;border-color:#c0dd97;">
+      <div class="feat-icon" style="background:#c0dd97;"><svg viewBox="0 0 24 24" fill="none" stroke="#27500a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div><div class="feat-title" style="color:#27500a;">Perfil</div><div class="feat-body" style="color:#3b6d11;">Foto, histórico e evolução no ranking.</div></div>
     </div>
-    <div class="card">
-      <div class="card-icon" style="background:#faeeda;"><svg viewBox="0 0 24 24" fill="none" stroke="#854f0b" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-      <div class="card-title">Registro fácil</div>
-      <div class="card-body">Placar set a set com tie-break automático. FAV, FSA e W.O. também registrados.</div>
+    <div class="feat-card" style="background:#faeeda;border-color:#fac775;">
+      <div class="feat-icon" style="background:#fac775;"><svg viewBox="0 0 24 24" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div><div class="feat-title" style="color:#633806;">Registro</div><div class="feat-body" style="color:#854f0b;">Placar, tie-break, FAV, FSA e W.O.</div></div>
     </div>
-    <div class="card">
-      <div class="card-icon" style="background:#fbeaf0;"><svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4.418 0-8-1.79-8-4s3.582-4 8-4 8 1.79 8 4-3.582 4-8 4z"/><path d="M21 9c0 2.21-3.582 4-8 4s-8-1.79-8-4 3.582-4 8-4 8 1.79 8 4z"/></svg></div>
-      <div class="card-title">H2H</div>
-      <div class="card-body">Confronto direto entre dois atletas: histórico, placar acumulado e stats lado a lado.</div>
+    <div class="feat-card" style="background:#fbeaf0;border-color:#f4c0d1;">
+      <div class="feat-icon" style="background:#f4c0d1;"><svg viewBox="0 0 24 24" fill="none" stroke="#72243e" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div><div class="feat-title" style="color:#72243e;">H2H</div><div class="feat-body" style="color:#993556;">Confronto direto entre atletas.</div></div>
     </div>
   </div>
 
-  <div class="section-title">Barragens (Misto)</div>
-  <div class="br-grid">
-    <div class="br-item" style="background:#ede9fe;"><div class="br-name" style="color:#3c3489;">SLAM</div><div class="br-range" style="color:#534ab7;">#1 – #30</div></div>
-    <div class="br-item" style="background:#dbeafe;"><div class="br-name" style="color:#0c447c;">MASTER</div><div class="br-range" style="color:#185fa5;">#31 – #80</div></div>
-    <div class="br-item" style="background:#cffafe;"><div class="br-name" style="color:#085041;">500</div><div class="br-range" style="color:#0f6e56;">#81 – #130</div></div>
-    <div class="br-item" style="background:#d1fae5;"><div class="br-name" style="color:#173404;">250</div><div class="br-range" style="color:#3b6d11;">#131+</div></div>
-  </div>
-
-  <!-- FEMININO -->
-  <div class="fem-card">
-    <div class="fem-header">
-      <div class="fem-dot"></div>
-      <div class="fem-title">Ranking Feminino — USP WTA</div>
+  <!-- Barragens + Feminino -->
+  <div class="two-col">
+    <div>
+      <div class="sec-header"><span class="sec-title">Barragens Misto</span><div class="sec-line"></div></div>
+      <div class="br-grid">
+        <div class="br-item" style="background:#ede9fe;"><div class="br-name" style="color:#3c3489;">SLAM</div><div class="br-range" style="color:#534ab7;">#1 – 30</div></div>
+        <div class="br-item" style="background:#dbeafe;"><div class="br-name" style="color:#0c447c;">MASTER</div><div class="br-range" style="color:#185fa5;">#31 – 80</div></div>
+        <div class="br-item" style="background:#cffafe;"><div class="br-name" style="color:#085041;">500</div><div class="br-range" style="color:#0f6e56;">#81 – 130</div></div>
+        <div class="br-item" style="background:#d1fae5;"><div class="br-name" style="color:#173404;">250</div><div class="br-range" style="color:#3b6d11;">#131+</div></div>
+      </div>
     </div>
-    <div class="fem-body">
-      Todas as mulheres participam obrigatoriamente do ranking feminino, com barragem única (USP WTA) e pontuação independente do Misto. As jogadoras que quiserem podem participar dos dois rankings ao mesmo tempo — cada modalidade conta separadamente.
-    </div>
-    <div class="fem-pills">
-      <div class="fem-pill">Barragem única USP WTA</div>
-      <div class="fem-pill">Pontuação independente</div>
-      <div class="fem-pill">Pode jogar os dois</div>
+    <div>
+      <div class="sec-header"><span class="sec-title">Ranking Feminino</span><div class="sec-line"></div></div>
+      <div class="fem-card">
+        <div class="fem-header"><div class="fem-dot"></div><div class="fem-title">USP WTA — barragem única</div></div>
+        <div class="fem-body">Todas as mulheres participam obrigatoriamente. Pontuação independente do Misto. Quem quiser pode jogar os dois rankings.</div>
+        <div class="fem-pills"><div class="fem-pill">Pontuação independente</div><div class="fem-pill">Pode jogar os dois</div></div>
+      </div>
     </div>
   </div>
 
-  <div class="hl">
-    <div class="hl-title">Como pontuar</div>
-    <div class="hl-body">Cada partida vale <strong>+10 pts</strong> (participação) + <strong>+40 pts</strong> (vitória). Vença 3 seguidas no simples e ganhe um bônus de <strong>+70 pts</strong>. Faltou sem avisar? −40 pts (FSA). Cada ponto conta.</div>
+  <!-- Como pontuar -->
+  <div class="sec-header"><span class="sec-title">Como pontuar</span><div class="sec-line"></div></div>
+  <div class="pts-grid">
+    <div class="pts-card"><div class="pts-val">+10</div><div class="pts-lbl">participação</div></div>
+    <div class="pts-card"><div class="pts-val">+40</div><div class="pts-lbl">vitória</div></div>
+    <div class="pts-card"><div class="pts-val">+70</div><div class="pts-lbl">bônus 3 seguidas</div></div>
+    <div class="pts-card"><div class="pts-val" style="color:#dc2626;">−20/−40</div><div class="pts-lbl">FAV / FSA</div></div>
   </div>
 
+  <!-- Duplas -->
   <div class="doubles-card">
-    <div class="new-badge">novidade</div>
-    <div class="doubles-title">Duplas chegaram ao ranking</div>
-    <div class="doubles-body">Pela primeira vez, partidas de duplas também pontuam. Monte sua dupla com um(a) colega de barragem e acumulem pontos juntos — vale para o Misto e para o Feminino.</div>
-    <div class="pts-row">
-      <div class="pts-chip"><div class="pts-val">+10</div><div class="pts-lbl">por jogar</div></div>
-      <div class="pts-chip"><div class="pts-val">+40</div><div class="pts-lbl">por vencer</div></div>
-      <div class="pts-chip"><div class="pts-val">2×2</div><div class="pts-lbl">mesma barragem</div></div>
+    <div class="doubles-left">
+      <div class="new-badge">novidade</div>
+      <div class="doubles-title">Duplas chegaram ao ranking</div>
+      <div class="doubles-body">Monte sua dupla com um(a) colega de barragem e acumulem pontos juntos. Vale para o Misto e para o Feminino. Mesmas regras do simples.</div>
+    </div>
+    <div class="doubles-chips">
+      <div class="d-chip"><div class="d-val">+10</div><div class="d-lbl">por jogar</div></div>
+      <div class="d-chip"><div class="d-val">+40</div><div class="d-lbl">por vencer</div></div>
+      <div class="d-chip"><div class="d-val">2×2</div><div class="d-lbl">mesma barragem</div></div>
     </div>
   </div>
 
-  <div class="section-title">Como começar</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div>
-        <div class="step-title">Acesse e encontre seu perfil</div>
-        <div class="step-body">Seus dados já foram importados do ranking 2025. Procure seu nome na lista de jogadores(as).</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-title">Atualize seu perfil</div>
-        <div class="step-body">Adicione foto, telefone, instituto e estilo de jogo. É livre — sem senha necessária.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-title">Agende um jogo</div>
-        <div class="step-body">Veja quem está na sua barragem, use o H2H para escolher o próximo adversário e combine pelo WhatsApp.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-title">Registre o resultado</div>
-        <div class="step-body">Clique em <strong>+ Partida</strong>, preencha o placar e pronto. O ranking atualiza na hora.</div>
-      </div>
-    </div>
+  <!-- Como começar -->
+  <div class="sec-header"><span class="sec-title">Como começar</span><div class="sec-line"></div></div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">1</div><div class="step-title">Encontre seu perfil</div><div class="step-body">Seus dados já foram importados do ranking 2025.</div></div>
+    <div class="step-card"><div class="step-num">2</div><div class="step-title">Atualize seu perfil</div><div class="step-body">Foto, telefone e instituto. Livre, sem senha.</div></div>
+    <div class="step-card"><div class="step-num">3</div><div class="step-title">Agende um jogo</div><div class="step-body">Veja sua barragem e combine pelo WhatsApp.</div></div>
+    <div class="step-card"><div class="step-num">4</div><div class="step-title">Registre o resultado</div><div class="step-body">Clique em + Partida, preencha o placar e pronto.</div></div>
   </div>
 
-  <hr class="divider">
-
-  <div class="hl hl-orange">
-    <div class="hl-title">Sistema em versão de teste — sua opinião conta</div>
-    <div class="hl-body">Este é o primeiro ciclo com o sistema digital. Encontrou algo errado ou tem uma ideia? Fale com os organizadores. O ranking é de vocês e será construído junto com vocês.</div>
+  <div class="beta-bar">
+    <div class="beta-title">Sistema em versão de teste — sua opinião conta</div>
+    <div class="beta-body">Encontrou algo errado ou tem uma ideia? Fale com os organizadores. O ranking é de vocês e será construído junto com vocês.</div>
   </div>
 
   <div class="cta">
     <div class="cta-title">Pronto para jogar?</div>
-    <div class="cta-body">Acesse, explore, agende seu próximo jogo e registre o resultado. O ranking começa a valer agora.</div>
-    <a class="cta-url" href="https://ranking-tenis-usp.web.app">Abrir ranking</a>
+    <div class="cta-body">Acesse, explore, agende seu próximo jogo e registre o resultado.</div>
+    <a class="cta-btn" href="https://ranking-tenis-usp.web.app">ranking-tenis-usp.web.app</a>
   </div>
 
 </div>
+</body>
+</html>
